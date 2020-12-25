@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa-IR">
+
+<head>
+  <!--Meta-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--SEO-->
+
+  <!--TITLE-->
+  <title>Parasteh Digital {% block title %}{% endblock title %}</title>
+
+  <!--CSS-->
+  <link rel="stylesheet" href="{% static 'css/style.min.css' %}" />
+</head>
+
+<body data-lang="FA">
+  <div class="container">{% block content %} {% endblock content %}</div>
+  <!--Scripts-->
+  <script src="{% static 'js/bundle.min.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+env/
+venv/
+
+node_modules/
+
+migrations/
+__pycache__/
+
+dist/
+db.sqlite3

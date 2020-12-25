@@ -1,0 +1,42 @@
+{
+  "name": "parasteh-digital",
+  "version": "0.0.1",
+  "description": "A site you can buy digital stuff",
+  "private": "true",
+  "main": "manage.py",
+  "scripts": {
+    "clean": "shx rm -rf */__pycache__ && shx rm -rf */migrations && shx rm db.sqlite3 && shx rm -rf static/dist/*",
+    "database": "python manage.py makemigrations && python manage.py migrate",
+    "dev": "npm run database && concurrently \"gulp\" \"gulp dev\" \"python manage.py runserver\"",
+    "test": "python manage.py test"
+  },
+  "keywords": [
+    "django",
+    "shop",
+    "ecommerce"
+  ],
+  "author": "Hasan Parasteh",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-loader": "^8.2.2",
+    "concurrently": "^5.3.0",
+    "expose-loader": "^1.0.3",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-terser-js": "^5.2.2",
+    "gulp-uglifycss": "^1.1.0",
+    "imports-loader": "^1.2.0",
+    "shx": "^0.3.3",
+    "webpack": "^5.11.0",
+    "webpack-stream": "^6.1.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  }
+}
