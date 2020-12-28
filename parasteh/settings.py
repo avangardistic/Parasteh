@@ -111,3 +111,7 @@ MEDIA_ROOT = [BASE_DIR / "media"]
 
 # Authentication
 AUTH_USER_MODEL = "consumers.Consumer"
+
+# Redirect
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
