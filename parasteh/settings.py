@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # Third Party
     # Own Apps
+    "consumers",
     "pages",
 ]
 
@@ -107,3 +108,6 @@ STATICFILES_DIRS = [BASE_DIR / "static/dist"]
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = [BASE_DIR / "media"]
+
+# Authentication
+AUTH_USER_MODEL = "consumers.Consumer"
