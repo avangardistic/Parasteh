@@ -28,7 +28,6 @@ INSTALLED_APPS = [
     # Third Party
     # Own Apps
     "consumers",
-    "pages",
 ]
 
 MIDDLEWARE = [
@@ -41,7 +40,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "parasteh.urls"
+ROOT_URLCONF = "core.urls"
 
 TEMPLATES = [
     {
@@ -59,7 +58,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "parasteh.wsgi.application"
+WSGI_APPLICATION = "core.wsgi.application"
 
 
 # Database
