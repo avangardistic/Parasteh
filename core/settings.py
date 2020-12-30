@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     # Third Party
     # Own Apps
     "consumers",
+    "blog",
 ]
 
 MIDDLEWARE = [
