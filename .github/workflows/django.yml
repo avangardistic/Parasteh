@@ -27,6 +27,10 @@ jobs:
       - name: Run Tests
         run: |
           python manage.py test
+      - name: Install node and run gulp
+        run: |
+          npm install
+          gulp
       - name: Check Staticfiles Generation
         run: |
           python manage.py collectstatic --noinput
