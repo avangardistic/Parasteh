@@ -7,6 +7,7 @@ click==7.1.2
 colorama==0.4.4
 distlib==0.3.1
 Django==3.1.4
+django-basic-apps @ git+https://github.com/nathanborror/django-basic-apps@3a90090857549ea4198a72c44f45f6edb238e2a8
 filelock==3.0.12
 flake8==3.8.4
 identify==1.5.10
@@ -30,4 +31,5 @@ toml==0.10.2
 typed-ast==1.4.1
 typing-extensions==3.7.4.3
 virtualenv==20.2.2
+whitenoise==5.2.0
 wrapt==1.12.1

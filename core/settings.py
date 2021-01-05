@@ -32,6 +32,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    # https://warehouse.python.org/project/whitenoise/
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+    # Default Django Middlewares
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -102,6 +105,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static/dist"]
