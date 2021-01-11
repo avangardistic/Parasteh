@@ -8,7 +8,7 @@
     "clean": "shx rm -rf */__pycache__ && shx rm -rf */migrations && shx rm db.sqlite3 && shx rm -rf static/dist/*",
     "database": "python manage.py makemigrations && python manage.py migrate",
     "dev": "npm run database && concurrently \"gulp dev\" \"python manage.py runserver\"",
-    "build": "gulp",
+    "build": "concurrently \"gulp\" \"python manage.py makemigrations consumers blog\" && python manage.py migrate",
     "test": "python manage.py test"
   },
   "keywords": [
