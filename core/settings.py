@@ -13,7 +13,9 @@ SECRET_KEY = "-lw5r8mdbk)ul*7o0=e1^-w%d@#vobf2i!s3r$-n*zi8xae1j+"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "parasteh-digital.herokuapp.com",
+]
 
 
 # Application definition
