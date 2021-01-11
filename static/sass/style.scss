@@ -1,2 +1,22 @@
 // Required
+$theme-colors:(
+    "primary": #1A3DED,
+    "secondary": #FCDD28,
+    "special": #B00775
+);
+
+$body-bg: #F5F2E0;
+$body-color: lighten(#111218, 20%);
 @import "node_modules/bootstrap/scss/bootstrap";
+
+
+$title-color: #111218;
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+}
+h1,h2,h3,h4,h5,h6{
+    color: $title-color;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
