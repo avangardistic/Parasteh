@@ -20,6 +20,9 @@ class Post(models.Model):
     category = models.ForeignKey(
         "blog.Category", on_delete=models.CASCADE, related_name="blog_category"
     )
+
+    subtitle = models.CharField(max_length=255, blank=True, null=True)
+    image = models.ImageField(upload_to="posts/", blank=True, null=True)
     content = models.TextField()
 
     updated_on = models.DateTimeField(auto_now=True)
