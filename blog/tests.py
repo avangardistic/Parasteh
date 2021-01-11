@@ -7,7 +7,7 @@ from consumers.models import Consumer
 class PostTests(TestCase):
     def setUp(self):
         self.author = Consumer.objects.create_user(
-            email="test@example.com", password="fooBar123", password_confirm="fooBar123"
+            email="test@example.com", password1="fooBar123", password2="fooBar123"
         )
         self.category = Category(title="Test Category", slug="test-category")
         self.post = Post(
