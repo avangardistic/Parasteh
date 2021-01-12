@@ -6,58 +6,45 @@ from django.utils import timezone
 
 class ConsumerManager(BaseUserManager):
     def _create_user(
-        self,
-        email,
-        is_staff,
-        is_active,
-        is_superuser,
-        password1,
-        password2,
-        **extra_fields
+        self, email, is_staff, is_active, is_superuser, password=None, **extra_fields
     ):
         now = timezone.now()
         if not email:
-            raise ValueError("The given email must be set")
+            raise TypeError("The given email must be set")
+        elif not password:
+            raise TypeError("The passwords must be set")
+
         email = self.normalize_email(email)
         user = self.model(
             email=email,
             is_staff=is_staff,
-            is_active=True,
+            is_active=is_active,
             is_superuser=is_superuser,
             last_login=now,
             date_joined=now,
             **extra_fields
         )
-        if password1 != password2:
-            raise ValueError("The given passwords are not the same")
-        user.set_password(password1)
+        user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_user(self, email, password1, password2, **extra_fields):
-        # extra_fields.setdefault("is_staff", False)
-        # extra_fields.setdefault("is_superuser", False)
+    def create_user(self, email, password, **extra_fields):
         return self._create_user(
             email=email,
+            password=password,
             is_staff=False,
             is_active=True,
             is_superuser=False,
-            password1=password1,
-            password2=password2,
             **extra_fields
         )
 
-    def create_superuser(self, email, password1, password2, **extra_fields):
-        # extra_fields.setdefault("is_staff", True)
-        # extra_fields.setdefault("is_superuser", True)
-
+    def create_superuser(self, email, password, **extra_fields):
         return self._create_user(
             email=email,
+            password=password,
             is_staff=True,
             is_active=True,
             is_superuser=True,
-            password1=password1,
-            password2=password2,
             **extra_fields
         )
 

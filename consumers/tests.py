@@ -6,7 +6,7 @@ from .models import Consumer
 class UsersManagersTests(TestCase):
     def test_create_user(self):
         user = Consumer.objects.create_user(
-            email="test@example.com", password1="fooBar123", password2="fooBar123"
+            email="test@example.com", password="fooBar123"
         )
         self.assertTrue(user.is_active)
         self.assertFalse(user.is_staff)
@@ -18,7 +18,7 @@ class UsersManagersTests(TestCase):
 
     def test_create_super_user(self):
         user = Consumer.objects.create_superuser(
-            email="test@example.com", password1="fooBar123", password2="fooBar123",
+            email="test@example.com", password="fooBar123"
         )
         self.assertTrue(user.is_active)
         self.assertTrue(user.is_staff)

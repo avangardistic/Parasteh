@@ -6,7 +6,8 @@
   "main": "manage.py",
   "scripts": {
     "clean": "shx rm -rf */__pycache__ && shx rm -rf */migrations && shx rm db.sqlite3 && shx rm -rf static/dist/*",
-    "database": "python manage.py makemigrations && python manage.py migrate",
+    "database": "python manage.py makemigrations consumers blog && python manage.py migrate",
+    "configure": "pip install -r requirements.txt && npm run database",
     "dev": "npm run database && concurrently \"gulp dev\" \"python manage.py runserver\"",
     "build": "concurrently \"gulp\"",
     "test": "python manage.py test"
