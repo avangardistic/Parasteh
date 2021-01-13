@@ -1,7 +1,15 @@
+import os
 import secrets
 from pathlib import Path
 
 import dj_database_url
+
+# Detects if site is on heroku or not
+if "DYNO" in os.environ:
+    on_heroku = False
+else:
+    on_heroku = True
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -74,8 +82,16 @@ WSGI_APPLICATION = "core.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-DATABASES = {}
-DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+if on_heroku:
+    DATABASES = {}
+    DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
 
 
 # Password validation
