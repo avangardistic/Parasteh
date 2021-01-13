@@ -6,9 +6,9 @@ import dj_database_url
 
 # Detects if site is on heroku or not
 if "DYNO" in os.environ:
-    on_heroku = False
-else:
     on_heroku = True
+else:
+    on_heroku = False
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
