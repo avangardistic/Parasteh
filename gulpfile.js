@@ -7,6 +7,7 @@ const {
 } = require('gulp');
 const terser = require('gulp-terser-js')
 const uglifycss = require('gulp-uglifycss');
+const purgecss = require('gulp-purgecss')
 const rename = require('gulp-rename');
 const babel = require('gulp-babel');
 const sass = require('gulp-sass');
@@ -36,6 +37,9 @@ function buildSass() {
         .pipe(uglifycss({
             "maxLineLen": 80,
             "uglyComments": true
+        }))
+        .pipe(purgecss({
+            content:['*.html', '*/*.html', '*/*/*.html']
         }))
         .pipe(rename({
             extname: '.min.css'
