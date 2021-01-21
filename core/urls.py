@@ -6,7 +6,9 @@ from django.urls import include, path
 from .views import home
 
 urlpatterns = [
+    path('tinymce/', include('tinymce.urls')), # tinymce 
     path("admin/", admin.site.urls),
+    
     path("blog/", include("blog.urls")),
     path("", home, name="home"),
 ]

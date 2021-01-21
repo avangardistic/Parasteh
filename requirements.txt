@@ -9,9 +9,11 @@ distlib==0.3.1
 dj-database-url==0.5.0
 Django==3.1.4
 django-basic-apps @ git+https://github.com/nathanborror/django-basic-apps@3a90090857549ea4198a72c44f45f6edb238e2a8
+django-tinymce==3.2.0
 filelock==3.0.12
 flake8==3.8.4
 identify==1.5.10
+importlib-metadata==3.4.0
 isort==5.6.4
 lazy-object-proxy==1.4.3
 mccabe==0.6.1
@@ -35,3 +37,4 @@ typing-extensions==3.7.4.3
 virtualenv==20.2.2
 whitenoise==5.2.0
 wrapt==1.12.1
+zipp==3.4.0

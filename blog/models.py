@@ -1,3 +1,4 @@
+from tinymce import models as tinymce_models
 from django.db import models
 
 STATUS = ((0, "Draft"), (1, "Publish"))
@@ -23,7 +24,7 @@ class Post(models.Model):
 
     subtitle = models.CharField(max_length=255, blank=True, null=True)
     image = models.ImageField(upload_to="posts/", blank=True, null=True)
-    content = models.TextField()
+    content = tinymce_models.HTMLField()
 
     updated_on = models.DateTimeField(auto_now=True)
     created_on = models.DateTimeField(auto_now_add=True)
